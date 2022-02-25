@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class GerenciarConta {
@@ -25,7 +26,7 @@ public class GerenciarConta {
                         double valorDeposito = Double.parseDouble(input.nextLine());
                         gc.conta.depositar(valorDeposito);
                     }catch (Exception ex){
-                        System.out.println("Erro: " + ex.getMessage());
+                        emitirMensagem(ex);
                     }
                     break;
                 case 2:
@@ -35,7 +36,7 @@ public class GerenciarConta {
                         double valorSaque = Double.parseDouble(input.nextLine());
                         gc.conta.sacar(valorSaque);
                     }catch (Exception ex){
-                        System.out.println("Erro: " + ex.getMessage());
+                        emitirMensagem(ex);
                     }
                     break;
                 case 3:
@@ -48,5 +49,12 @@ public class GerenciarConta {
                     System.out.println("Opção inválida");
             }
         }while(opc != 9);
+    }
+
+    private static void emitirMensagem(Exception ex) {
+        JOptionPane.showMessageDialog(null,
+                "Erro: " + ex.getMessage(),
+                "Aconteceu um erro",
+                JOptionPane.ERROR_MESSAGE);
     }
 }

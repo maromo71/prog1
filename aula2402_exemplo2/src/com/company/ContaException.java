@@ -9,12 +9,14 @@ public class ContaException extends Exception {
 
     @Override
     public String getMessage() {
-        if(codigoErro==1){
-            return "Sem saldo suficiente para saque";
+        switch (codigoErro){
+            case 1:
+                return "Sem saldo suficiente para saque";
+            case 2:
+                return "Valor inválido para depósito";
+            default:
+                return "";
         }
-        if(codigoErro==2){
-            return "Valor inválido para depósito";
-        }
-        return "";
+
     }
 }
