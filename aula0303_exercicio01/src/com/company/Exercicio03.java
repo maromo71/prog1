@@ -11,6 +11,7 @@ public class Exercicio03 {
         for (char l: nome.toCharArray()) {
             System.out.println(l);
         }
+        System.out.println("Proóximo exercício");
         for (int i = 0; i < nome.length(); i++) {
             for (int j = 0; j <= i; j++) {
                 System.out.printf("%c", nome.charAt(j));
